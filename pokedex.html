@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <title>Sylveon</title>
+    <style>
+
+body {
+            background-color: #ea88c7;
+    
+        }
+        .pokeimg1 {
+            position: absolute;
+        }
+        .pokeImg {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 263px;
+            left: 140px;
+            
+        }
+        button {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(234, 136, 191);
+            border-color: rgb(235, 96, 182);
+            border-radius: 50px;
+            position: absolute;
+            left: 55px;
+            top: 485px;
+        }
+        .placeholder {
+            width: 130px;
+            height: 60px;
+            position: absolute;
+            top: 551px;
+            left: 105px;
+            font-size: 25px;
+            font-family:'Times New Roman', Times, serif;
+            border-radius: 10px;
+            background-color: transparent;
+            text-align: center;
+            text-shadow: 1px;
+    
+        }
+        .grafica {
+            width: 280px;
+            height: 280px;
+            position: absolute;
+            top: 240px;
+            left: 460px;
+        }
+    </style>
+
+</head>
+<body>
+    <div style="margin: 10px;">
+        <nav class="navbar navbar-light" style="background-color: rgb(224, 126, 188);">
+         <div class="container">
+           <a class="navbar-brand" href="index.html" style="color: rgb(255, 255, 255);">INICIO</a>
+           <div class="collapse navbar-collapse" id="navbarNavDropdown">            <style>
+              @import url('https://fonts.cdnfonts.com/css/maputo');
+            </style>
+
+<ul class="nav navbar-nav">
+    <li class="nav-item dropdown">
+     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false">Pokemon</a>
+     <div class="dropdown-menu"
+     aria-labelledby="navbarDripdownMenuLink">
+     
+     <a class="dropdown-item"
+     href="pokedex.html">Pokedex</a><br>
+         
+       </li>
+    </ul>
+   </div>
+ </div>
+</nav>
+
+</div>
+
+<img src="img/pokedex.jpg" alt="Pokedex" width="800px">
+    <input type="text" placeholder="..." id="pokeName" class="placeholder">
+    <img src="img/pokebola.jpg" alt="Pokebola" id="pokeImg" width="300px" class="pokeImg">
+
+    <div id="pokename" class="pokeimg1" style="left: 485px; top: 390px; font-size: 15px;">Nombre</div>
+    <div id="pokeHe" class="pokeimg1" style="left: 635px; top: 390px; font-size: 15px;">Altura</div>
+    <div id="pokeWe" class="pokeimg1" style="left: 485px; top: 430px; font-size: 15px;">Peso</div>
+    <div id="poketype" class="pokeimg1" style="left: 637px; top: 430px; font-size: 15px;">Tipo</div>
+    <div id="pokenitem" class="pokeimg1" style="left: 300px; top:300px;font-size:15px;"></div>
+    <div id="pokemove1" class="pokeimg1" style="left: 300px; top:300px;font-size:15px;"></div>
+    <div id="pokemove2" class="pokeimg1" style="left: 300px; top:300px;font-size:15px;"></div>
+    <div id="pokemove3" class="pokeimg1" style="left: 300px; top:300px;font-size:15px;"></div>
+    <div id="pokemove4" class="pokeimg1" style="left: 300px; top:300px;font-size:15px;"></div>
+
+    <div id="pokeid" class="pokeimg1" style="left: 300px; top: 300px; font-size: 15px;"></div>
+    <div id="pokeorder" class="pokeimg1" style="left: 300px; top: 300px; font-size: 15px;"></div>
+
+    <button onclick="fetchPokemon()" class="button"></button>
+    <div class="grafica">
+        <canvas id="miCanvas"></canvas>
+    </div>
+
+    <script>
+        const fetchPokemon = () => {
+            const pokeNameInput = document.getElementById("pokeName");
+            let pokeName = pokeNameInput.value.toLowerCase();
+            const url = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
+
+            fetch(url)
+            .then(res => {
+                 if(!res.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return res.json();
+        })
+        .then(data => {
+            console.log(data);
+
+            let pokeImgSrc = data.sprites.front_default;
+                    document.getElementById('pokeImg').src = pokeImgSrc;
+
+                    document.getElementById('pokename').innerHTML = `Nombre: ${data.forms[0].name}`;
+                document.getElementById('pokeHe').innerHTML = `Altura: ${data.height / 10} m`;
+                document.getElementById('pokeWe').innerHTML = `Peso: ${data.weight / 10} kg`;
+                document.getElementById('poketype').innerHTML = `Tipo: ${data.types.map(type => type.type.name).join(', ')}`;
+
+
+                    const miCanvas = document.getElementById("miCanvas").getContext("2d");
+                    if (window.miCanva !== undefined) {
+                        window.miCanva.destroy();
+                    }
+                    window.miCanva = new Chart(miCanvas, {
+                        type: "bar",
+                        data: {
+                            labels:["HP", "Attack", "Defense", "Special-A", "Special-D", "Speed"],
+                            datasets:[{
+                                label: data.forms[0].name,
+                                backgroundColor: 'rgba(54,162,235,1)',
+                                data:[
+                                data.stats[0].base_stat,
+                                    data.stats[1].base_stat,
+                                    data.stats[2].base_stat,
+                                    data.stats[3].base_stat,
+                                    data.stats[4].base_stat,
+                                    data.stats[5].base_stat
+                                ],
+                                borderColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'
+                                ],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.5)',
+                                    'rgba(54, 162, 235, 0.5)',
+                                    'rgba(255, 206, 86, 0.5)',
+                                    'rgba(75, 192, 192, 0.5)',
+                                    'rgba(153, 102, 255, 0.5)',
+                                    'rgba(255, 159, 64, 0.5)'
+                                ]
+                            }]
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                    alert('Error fetching Pokemon data. Please try again');
+                });
+        }
+
+        </script>
+    <script src="chart.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/rammetto-one" rel="stylesheet">
+    <title>Tienda de Erika</title>
+</head>
+<body>
+    <div style="margin: 24px;">
+        <nav class="navba navbar-light"
+        style="background-color: rgb(243, 147, 217);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color: rgb(255, 255, 255);"
+            >INICIO</a>
+            <div class="collapse navbar-collapse" id="navbarNabDropDown">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item
+                     dropdown">
+                     <a class="nav-link dropdown-toggle"
+                     href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown"
+                     aria-haspopup="true"
+                     aria-expanded="false">Unidad 1</a>
+                     <div class="dropdown-menu"
+                     aria-labelledby="navbarDripdownMenuLink">
+                     <a class="dropdown-item" href="perfil.html">Perfil</a><br>
+                     <a class="dropdown-item" href="calculadora.html">Calculadora</a><br>
+                     <a class="dropdown-item" href="tienda.html">Tienda parte 1</a><br>
+                     </div>
+                    </li>
+                    <li class="nav-item
+                    dropdown">
+                    <a class="nav-link dropdown-toggle"
+                    href="" id="navbarDropdownMenuLink"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false">Unidad 2</a>
+                    <div class="dropdown-menu"
+                    aria-labelledby="navbarDripdownMenuLink">
+                    <a class="dropdown-item" href="tiendapedido.html">Tienda pedido</a><br>
+                    <a class="dropdown-item" href="json.html">JSON</a><br>
+                    <a class="dropdown-item" href="tiendapedido2.html">Tienda parte 2</a><br>
+                    </div>
+                   </li>
+                   <li class="nav-item
+                   dropdown">
+                   <a class="nav-link dropdown-toggle"
+                   href="" id="navbarDropdownMenuLink"
+                   data-toggle="dropdown"
+                   aria-haspopup="true"
+                   aria-expanded="false">Unidad 3</a>
+                   <div class="dropdown-menu"
+                   aria-labelledby="navbarDripdownMenuLink">
+                   <a class="dropdown-item" href="basededatos.html">Base de datos</a><br>
+                   <a class="dropdown-item" href="peliculas.html">Peliculas</a><br>
+                   </div>
+                  </li>
+                </ul>
+            </div>
+        </div>
+        </nav>
+    </div>
+<div>
+    <div id="menu container"></div>
+    <script src="menu2.js"></script>
+    <h1>Desayunos</h1>
+    <h2>Total: $<span id="total">0</span></h2>
+
+    <style>
+        img{
+            width:200px;
+            height:auto;
+        }
+        table{
+            width: 80%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            box-shadow: 0 5px 15px black;
+            margin-left:50px ;
+        }
+        th,tr{
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even){
+            background-color: rgb(244, 173, 217);
+        }
+        tr:hover{
+            background-color: rgb(242, 107, 190);
+        }
+    </style>
+   
+    <div style="margin:24px;">
+    </div>
+    <a href="tienda.html"></a>
+    <table>
+        <tr>
+            <th>Imagen</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+        </tr>
+        <tr>
+            <td><img src="img/hotcakes.jpg" alt="Desayuno"></td>
+            <td><p>¿A quién no le apetece un desayuno de película? Seguro que alguna vez has soñado con esas tortitas que aparecen en las películas americanas, pues ahora puedes darte ese capricho y hacerlo de la forma más saludable. </p></td>
+            <td>$58</td> 
+        </tr>
+        <tr>
+            <td><img src="img/yogurcito.jpg" alt="Desayuno"></td>
+            <td><p>Un desayuno que aporta calcio y energía, y además fácil de preparar, es un bowl de yogur natural con fruta cortada en trocitos</p></td>
+            <td>$23</td>
+        </tr>
+        <tr>
+            <td><img src="img/avenita.jpg" alt="Desayuno"></td>
+            <td><p>La avena es un alimento cargado de propiedades beneficiosas y, lo mejor, es un cereal que puedes mezclar con cualquier tipo de topping. Ya que hablamos de un cereal que aporta muchos beneficios para la salud, estamos seguros de que es la idea perfecta para comenzar el día con fuerza. </p></td>
+            <td>$96</td>
+        </tr>
+        <tr>
+            <td><img src="img/batido.jpg" alt="Desayuno"></td>
+            <td><p>Un batido de frutas o verduras es una de las formas más completas para beneficiarse de los nutrientes que necesita el organismo.</p></td>
+            <td>$86</td>
+        </tr>
+        <tr>
+            <td><img src="img/desayunito.jpg" alt="Desayuno"></td>
+            <td><p>Ya que con el desayuno debes cargar las pilar para aguantar las jornadas frenéticas de trabajo y estudio, es esencial saber elegir qué productos comer. Nosotros nos hemos vuelto adictos a una buena tostada integral con ingredientes sanos.</p></td>
+            <td>$65</td>
+        </tr>
+        <tr>
+            <td><img src="img/tortitassinazucar.jpg" alt="Desayuno"></td>
+            <td><p>¿Quién ha dicho que las tortitas no pueden ser sanas? Existe la manera saludable de prepararlas para disfrutar de un desayuno fácil, rico en sabor y nutrientes.</p></td>
+            <td>$60</td>
+        </tr>
+
+    
+    </table>
+</body>
+</html>

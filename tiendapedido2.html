@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link href="https://fonts.cdnfonts.com/css/la-unica" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/thumbs-down" rel="stylesheet">
+    <title>Tienda de Erika</title>
+</head>
+<body>
+
+    <style>
+        body{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: rgb(238, 170, 196);
+            margin: 0;
+            padding: 20px;
+            color: black;
+        }
+
+        h1{
+            color: black;
+            text-align: center;
+        }
+        button{
+            background-color: rgb(235, 91, 151);
+            color: pink;
+            padding: 10px 15px;
+            margin: 20px 0;
+            border: 0;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 50%;
+        }
+        button:hover{
+            background-color: cadetblue;
+            color: black;
+        }
+    </style>
+    
+    <div style="margin: 24px">
+            <nav class="navbar navbar-light"
+            style="background-color:rgb(247, 200, 223);" >
+                <div class="container">
+                    <a class="navbar-brand" href="index.html" style="color:rgb(255, 255, 255); ">INICIO</a>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-espanded="false">Unidad 1</a>
+                                <div class="dropdown-menu"
+                                aria-labelledby="navbarDripdownMenuLink">
+                                <a class="dropdown-item"
+                                href="perfil.html">Perfil</a><br>
+                                <a class="dropdown-item"
+                                href="calculadora.html">Calculadora</a><br>
+                                <a class="dropdown-item"
+                                href="tienda.html">Tienda parte 1</a><br>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-espanded="false">Unidad 2</a>
+                                <div class="dropdown-menu"
+                                aria-labelledby="navbarDripdownMenuLink">
+                                <a class="dropdown-item"
+                                href="tiendapedido.html">Tienda Pedido</a><br>
+                                <a class="dropdown-item"
+                                href="json.html">JSON</a><br>
+                                <a class="dropdown-item"
+                                href="tiendapedido2.html">Tienda Pedido 2</a><br>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-espanded="false">Unidad 3</a>
+                                <div class="dropdown-menu"
+                                aria-labelledby="navbarDripdownMenuLink">
+                                <a class="dropdown-item"
+                                href="basededatos.html">Base de datos</a><br>
+                                <a class="dropdown-item"
+                                href="peliculas.html">Peliculas</a><br>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+               </div>
+            </nav>
+        </div>
+
+        <h1>  Tienda en linea de abarrotes </h1>
+
+        <form id="orden">
+            <div class="seccion">
+                <label for="abarrotes">abarrotes: </label>
+                <select id="abarrotes">
+                    <option value="arroz">arroz</option>
+                    <option value="consome">consome</option>
+                    <option value="azucar">azucar</option>
+                    <option value="cafe">cafe</option>
+                    <option value="mole">mole</option>
+                    <option value="sal">sal</option>
+                    <option value="mayonesa">mayonesa</option>
+                    <option value="catsup">catsup</option>
+                    <option value="pasta">pasta</option>
+                    <option value="miel">miel</option>
+                    <option value="cajeta">cajeta</option>
+                </select>
+                <div>
+                    cantidad:
+                    <label><input type="radio" name="CantidadAbarrotes" value="1"> 1 </label>
+                    <label><input type="radio" name="CantidadAbarrotes" value="2"> 2 </label>
+                    <label><input type="radio" name="CantidadAbarrotes" value="3"> 3 </label>
+                    <label><input type="radio" name="CantidadAbarrotes" value="4"> 4 </label>
+                    <label><input type="radio" name="CantidadAbarrotes" value="5"> 5 </label>
+                    <label><input type="radio" name="CantidadAbarrotes" value="6"> 6 </label>
+                    <label><input type="radio" name="CantidadAbarrotes" value="7"> 7 </label>
+                    <label><input type="radio" name="CantidadAbarrotes" value="8"> 8 </label>
+                    <label><input type="radio" name="CantidadAbarrotes" value="9"> 9 </label>
+                    <label><input type="radio" name="CantidadAbarrotes" value="10"> 10 </label>
+                </div>
+            </div>
+            <div class="seccion">
+                <label for="abarrotes">enlatados: </label>
+                <select id="enlatados">
+                    <option value="sopa">sopa</option>
+                    <option value="vegetal">vegetal</option>
+                    <option value="elotes">elotes</option>
+                    <option value="ensalada">ensalada</option>
+                    <option value="chiles">chiles</option>
+                    <option value="frijoles">frijoles</option>
+                    <option value="aceitunas">aceitunas</option>
+                    <option value="frutas">frutas</option>
+                    <option value="chicharos">chicharos</option>
+                    <option value="sardinas">sardinas</option>
+                    <option value="atun">atun</option>
+                </select>
+                <div>
+                    cantidad:
+                    <label><input type="radio" name="CantidadEnlatados" value="1"> 1 </label>
+                    <label><input type="radio" name="CantidadEnlatados" value="2"> 2 </label>
+                    <label><input type="radio" name="CantidadEnlatados" value="3"> 3 </label>
+                    <label><input type="radio" name="CantidadEnlatados" value="4"> 4 </label>
+                    <label><input type="radio" name="CantidadEnlatados" value="5"> 5 </label>
+
+                </div>
+            </div>
+            <div class="seccion">
+                <label for="abarrotes">lacteos: </label>
+            </div>
+            <div class="seccion">
+                <label for="abarrotes">botana: </label>
+            </div>
+            <div class="seccion">
+                <label for="abarrotes">confiteria: </label>
+            </div>
+            <div class="seccion">
+                <label for="abarrotes">frutas y verduras: </label>
+            </div>
+            <div class="seccion">
+                <label for="abarrotes">bebidas: </label>
+            </div>
+
+            <button type="button" onclick="submitForm()">Revisar Pedido</button>
+
+        </form>
+        <script>
+            function submitForm(){
+                const formElelements = document.getElementById('orden');
+                const formData = new FormData(formElelements);
+                const queryParams = new URLSearchParams (); 
+
+                for(let[key,value] of formData.entries()){
+                    queryParams.append(key,value);
+                }
+                window.location.href = 'rewiew_order.html?${queryParams}';
+                }
+        </script>
+        </body>
+        </html>
